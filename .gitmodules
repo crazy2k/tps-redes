@@ -1,0 +1,3 @@
+[submodule "dc-tex"]
+	path = dc-tex
+	url = git@github.com:bcardiff/dc-tex.git
