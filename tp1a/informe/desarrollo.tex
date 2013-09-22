@@ -18,9 +18,9 @@ Como modelo vamos a analizar los datos de diferentes maneras:
   \hline
   192.168.0.104 & 28 & 0.0267942583732 & 5.22193230491 \\
   \hline
-  192.168.0.1 & 415 & 0.397129186603  & 1.33231970073 \\
+  192.168.0.1 & 448 & 0.428708133971 & 1.22193230491 \\
   \hline
-  192.168.0.101 & 448 & 0.428708133971 & 1.22193230491 \\
+  192.168.0.101 & 415 & 0.397129186603  & 1.33231970073 \\
   \hline
   192.168.0.100 & 1 & 0.000956937799043 & 10.029287227 \\
   \hline
@@ -34,14 +34,20 @@ Como modelo vamos a analizar los datos de diferentes maneras:
 
 
 Entrop\'ia de la fuente:\\
-$H(S) = -\sum_{s \in S} P(s) I(s)$\\
 $H(S) = 1.82297065237$\\
 
-En este caso la IP que realiz\'o m\'as consultas ARP fue 192.168.0.101. 
-La segunda fue 192.168.0.1 (router), \'esto es l\'ogico considerando que el router es el encargado de distribuir todo el tr\'afico de la red a los nodos correspondientes por lo que su tabla
-de direcciones macs tiene que estar correctamente actualizada el mayor tiempo posible.
+\begin{figure}[h]
+  \centering                                                       
+          \includegraphics[width=300pt]{consultas1.png}
+\end{figure}
 
-\newpage
+En este caso la IP que realiz\'o m\'as consultas ARP fue 192.168.0.1 (router), \'esto es l\'ogico considerando que el router es el encargado de distribuir todo el tr\'afico de la red a los nodos correspondientes por lo que su tabla
+de direcciones macs tiene que estar correctamente actualizada el mayor tiempo posible.\\\\
+
+
+\begin{itemize}
+ \item  IPs que respondieron consultas ARP:
+\end{itemize}
 
 \begin{tabular}{|l|l|l|l|l|}
   \hline
@@ -56,13 +62,16 @@ de direcciones macs tiene que estar correctamente actualizada el mayor tiempo po
 \end{tabular}\\
  
 Entrop\'ia de la fuente\\
-$H(S) = -\sum_{s \in S} P(s) I(s)$\\
 $H(S) = 0.721963466885$\\
 
-En este caso la IP 192.168.0.105 fue la que m\'as veces contest\'o los pedidos sobre su MAC, aumentando su probabilidad. Como se puede observar, la informaci\'on
-aportada por esta IP es considerablemente m\'as baja que la aportada por las dem\'as que poseen menor probabilidad e incluso m\'as baja que la entrop\'ia de la red.\\\\
+\begin{figure}[h]
+  \centering                                                       
+          \includegraphics[width=300pt]{respuestas1.png}
+\end{figure}
 
-\newpage
+En este caso la IP 192.168.0.105 fue la que m\'as veces contest\'o los pedidos sobre su MAC, aumentando su probabilidad. Como se puede observar, la informaci\'on
+aportada por esta IP es considerablemente m\'as baja que la aportada por las dem\'as que poseen menor probabilidad e incluso m\'as baja que la entrop\'ia de la red.\\\\\\
+
 \begin{itemize}
  \item IPs por las que se realizaron consultas ARP:\\
 \end{itemize}
@@ -92,8 +101,12 @@ aportada por esta IP es considerablemente m\'as baja que la aportada por las dem
 \end{tabular}\\
 \\ \ \\ \ \\ 
 Entrop\'ia de la fuente\\
-$H(S) = -\sum_{s \in S} P(s) I(s)$\\
 $H(S) = 1.99810125093$\\
+
+\begin{figure}[h]
+  \centering                                                       
+          \includegraphics[width=300pt]{consultadas1.png}
+\end{figure}
 
 En este caso la IP m\'as consultada en la red fue la 192.168.0.105. Al igual que en el punto anterior por consecuencia de su alta probabilidad de aparecer en la fuente, su informaci\'on no supera a la entrop\'ia que ofrece la red.
 
