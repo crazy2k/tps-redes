@@ -71,7 +71,7 @@ sus medidas de probabilidad e información asociadas.
   \hline
   192.168.0.100 & 1 & $0.000956937799043$ & $10.029287227$ \\
   \hline
-  192.168.0.103 & 11.0 & $0.0105263157895$ & $6.56985560833$ \\
+  192.168.0.103 & 11 & $0.0105263157895$ & $6.56985560833$ \\
   \hline
   192.168.0.102 & 26 & $0.0248803827751$ & $5.32884750883$ \\
   \hline
@@ -121,14 +121,11 @@ con la cantidad de pedidos que realizó cada IP.
 \end{figure}
 
 
-% TODO: Esto estaba mal. Falta buscar una explicación a por qué aparece la
-% 192.168.0.101.
-%
-%En este caso la IP que realiz\'o m\'as consultas ARP fue 192.168.0.1 (router),
-%\'esto es l\'ogico considerando que el router es el encargado de distribuir
-%todo el tr\'afico de la red a los nodos correspondientes por lo que su tabla
-%de direcciones macs tiene que estar correctamente actualizada el mayor tiempo
-%posible.\\\\
+Claramente se pueden distinguir dos nodos:
+192.168.0.1 que es el router, \'esto es l\'ogico considerando que \'el es el encargado de distribuir todo el tr\'afico de la red a los nodos correspondientes por lo que su tabla
+de direcciones macs tiene que estar correctamente actualizada el mayor tiempo
+posible.\\
+192.168.0.101 que es un host con un disco que comparte con el resto de la red.\\
 
 
 \subsubsection{Símbolos: IPs que responden una consulta ARP}
