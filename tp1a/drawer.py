@@ -52,9 +52,14 @@ for psrc, pdsts in requesters_links.iteritems():
         edge = pydot.Edge(nodes[psrc], nodes[pdst])
         graph.add_edge(edge)
 
+max_val = 1
 for psrc, n in requesters.iteritems():
-    nodes[psrc].set_width(str(n/9.0))
-    nodes[psrc].set_height(str(n/9.0))
+    max_val = n if n > max_val else max_val
+
+for psrc, n in requesters.iteritems():
+    nodes[psrc].set_label("%s (%d)" % (psrc, n))
+    nodes[psrc].set_width(str(n*2/max_val))
+    nodes[psrc].set_height(str(n*2/max_val))
 
 graph.write_png('test.png')
 
