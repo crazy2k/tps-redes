@@ -294,6 +294,242 @@ cada símbolo.
 \end{figure}
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%*********************************************************************%
+%*********************************************************************%
+%******************************RED 2**********************************%
+%*********************************************************************%
+%*********************************************************************%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Red 2}
+\subsubsection{Símbolos: IPs que realizan una consulta ARP}
+La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
+sus medidas de probabilidad e información asociadas.
+
+\vskip10pt
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Símbolo & Apariciones & Probabilidad & Información \\
+  \hline
+  192.168.0.105 & 57.0 & 0.0578093306288 & 4.11255382221\\
+\hline
+192.168.0.1 & 770.0 & 0.78093306288 & 0.356729200796\\
+\hline
+192.168.0.101 & 59.0 & 0.0598377281947 & 4.06280078702\\
+\hline
+192.168.0.100 & 3.0 & 0.00304259634888 & 8.36048133566\\
+\hline
+192.168.0.102 & 92.0 & 0.0933062880325 & 3.42188188032\\
+\hline
+0.0.0.0 & 5.0 & 0.00507099391481 & 7.62351574149\\
+\hline
+
+\end{tabular}
+
+\vskip10pt
+
+La entropía de la fuente es:
+
+$$H(S) = 1.1428138485$$
+
+En la figura \ref{fig:red2requesters:infoentro}, puede observarse gráficamente
+los valores de información de cada símbolo en relación con la entropía de la
+red.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{red2/consultas2.png}
+    \caption{Información de cada símbolo, en relación con la
+        entropía de la red}
+    \label{fig:red2requesters:infoentro}
+\end{figure}
+
+La figura \ref{fig:red2requesters:count} muestra la cantidad de apariciones de
+cada símbolo. Podemos observar que la IP 192.168.0.1 es lavque más pedidos realiza.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{red2/red2requesters.png}
+    \caption{Apariciones de los símbolos}
+    \label{fig:red2requesters:count}
+\end{figure}
+
+La figura \ref{fig:red2requesters:graph} permite observar qué IPs realizaron
+consultas sobre qué otras IPs de la red. El tamaño de cada nodo se corresponde
+con la cantidad de pedidos que realizó cada IP.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=350pt]{red2/red2requestersgraph.png}
+    \caption{Grafo en el que hay un eje desde una IP A a una IP B si la IP A
+        realizó una consulta por la IP B}
+    \label{fig:red2requesters:graph}
+\end{figure}
+
+
+\newpage
+
+\subsubsection{Símbolos: IPs que responden una consulta ARP}
+La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
+sus medidas de probabilidad e información asociadas.
+
+\vskip10pt
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Símbolo & Apariciones & Probabilidad & Información \\
+  \hline
+  192.168.0.105 & 134.0 & 0.732240437158 & 0.449610647826\\
+\hline
+192.168.0.1 & 36.0 & 0.196721311475 & 2.34577483684\\
+\hline
+192.168.0.100 & 3.0 & 0.016393442623 & 5.93073733756\\
+\hline
+192.168.0.102 & 10.0 & 0.0546448087432 & 4.1937717434\\
+\hline
+\end{tabular}\\
+
+\vskip10pt
+
+La entropía de la fuente es:
+$$H(S) = 1.11708005673$$
+
+En la figura \ref{fig:red2repliers:infoentro}, puede observarse gráficamente
+los valores de información de cada símbolo en relación con la entropía de la
+red.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{red2/respuestas2.png}
+    \caption{Información de cada símbolo, en relación con la
+        entropía de la red}
+    \label{fig:red2repliers:infoentro}
+\end{figure}
+
+La figura \ref{fig:red2repliers:count} muestra la cantidad de apariciones de
+cada símbolo.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{red2/red2repliers.png}
+    \caption{Apariciones de los símbolos}
+    \label{fig:red2repliers:count}
+\end{figure}
+
+
+\newpage
+
+\subsubsection{Símbolos: IPs por las que se realiza una consulta ARP}
+La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
+sus medidas de probabilidad e información asociadas.
+
+\vskip10pt
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Símbolo & Consultas & Probabilidad & Información \\
+  \hline
+  192.168.0.105 & 134.0 & 0.135902636917 & 2.87935464592\\
+\hline
+192.168.0.1 & 51.0 & 0.051724137931 & 4.27301849441\\
+\hline
+192.168.0.101 & 86.0 & 0.0872210953347 & 3.51917908168\\
+\hline
+192.168.0.100 & 704.0 & 0.713995943205 & 0.486012217741\\
+\hline
+192.168.0.102 & 11.0 & 0.0111561866126 & 6.48601221774\\
+\hline
+\end{tabular}
+
+\vskip10pt
+
+La entropía de la fuente es:
+
+$$H(S) = 1.33864665566$$
+
+En la figura \ref{fig:red2requested:infoentro}, puede observarse gráficamente
+los valores de información de cada símbolo en relación con la entropía de la
+red.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{red2/consultadas2.png}
+    \caption{Información de cada símbolo, en relación con la
+        entropía de la red}
+    \label{fig:red2requested:infoentro}
+\end{figure}
+
+La figura \ref{fig:red2requested:count} muestra la cantidad de apariciones de
+cada símbolo.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{red2/red2requested.png}
+    \caption{Apariciones de los símbolos}
+    \label{fig:red2requested:count}
+\end{figure}
+
+\newpage
+
+\subsubsection{Símbolos: IPs a las que le respondieron una consulta ARP}
+La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
+sus medidas de probabilidad e información asociadas.
+
+\vskip10pt
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Símbolo & Consultas & Probabilidad & Información \\
+  \hline
+  192.168.0.105 & 49.0 & 0.267759562842 & 1.90098999417\\
+\hline
+192.168.0.1 & 67.0 & 0.366120218579 & 1.44961064783\\
+\hline
+192.168.0.101 & 50.0 & 0.273224043716 & 1.87184364851\\
+\hline
+192.168.0.102 & 17.0 & 0.0928961748634 & 3.42823699703\\
+\hline
+\end{tabular}
+
+\vskip10pt
+
+La entropía de la fuente es:
+
+$$H(S) = 1.86964281144$$
+
+En la figura \ref{fig:red2replied:infoentro}, puede observarse gráficamente
+los valores de información de cada símbolo en relación con la entropía de la
+red.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{red2/respondidas2.png}
+    \caption{Información de cada símbolo, en relación con la
+        entropía de la red}
+    \label{fig:red2replied:infoentro}
+\end{figure}
+
+La figura \ref{fig:red2replied:count} muestra la cantidad de apariciones de
+cada símbolo.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{red2/red2replied.png}
+    \caption{Apariciones de los símbolos}
+    \label{fig:red2replied:count}
+\end{figure}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%*********************************************************************%
+%*********************************************************************%
+%***************************CONCLUSION********************************%
+%*********************************************************************%
+%*********************************************************************%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Conclusión}
 A partir de los datos obtenidos se puede observar que hay más $requests$ que
 $replys$, ésto se debe entre otras cosas a que los hosts hacen consultas por
