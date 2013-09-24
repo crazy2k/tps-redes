@@ -46,6 +46,8 @@ Para realizar este análisis, elegimos tres fuentes de información diferentes:
         (\emph{reply}) vía el protocolo ARP.
     \item Fuente cuyos símbolos son IPs por las que se realiza una consulta
         (\emph{request}) vía el protocolo ARP.
+    \item Fuente cuyos símbolos son IPs que a la que le responden una consulta
+        (\emph{reply}) vía el protocolo ARP.
 \end{itemize}
 
 Los datos fueron tomados de redes hogareñas.
@@ -520,7 +522,7 @@ cada símbolo.
     \caption{Apariciones de los símbolos}
     \label{fig:red2replied:count}
 \end{figure}
-\newpage
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %*********************************************************************%
@@ -529,17 +531,21 @@ cada símbolo.
 %*********************************************************************%
 %*********************************************************************%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage
 \section{Conclusión}
 A partir de los datos obtenidos se puede observar que hay más $requests$ que
 $replys$, ésto se debe entre otras cosas a que los hosts hacen consultas por
 su propia IP para asegurarse que no haya otro host con ésa dirección en la
 red. A su vez puede haber consultas que no son respondidas y paquetes que se
-pierden.\\ Nos resultó extraño que apareciera como IP fuente de algunos
+pierden.\\ 
+También se desprende de los datos que el router (192.168.0.1 en ambas redes analizadas)
+es siempre uno de los nodos más activos de la red. Ésto tiene mucho sentido ya que la mayor parte del tráfico de la red pasa por él.\\
+Nos resultó extraño que apareciera como IP fuente de algunos
 pedidos la IP 0.0.0.0 pero investigando un poco nos dimos cuenta que ésto
 sucede cuando un host se conecta a la red y se hace para verificar que no haya
-otro host con la misma IP.\\ El protocolo ARP no es seguro ya que permite que
-un host se haga pasar por otro, respondiendo mensajes ARP que no estaban
-dirigidos a él. Ésto se conoce como ARP Spoofing.
+otro host con la misma IP.\\
+Otra conclusión que pudimos sacar, no tanto de los datos sino de trabajar con el protocolo
+es que éste no es seguro ya que permite que un host se haga pasar por otro,
+respondiendo mensajes ARP que no estaban dirigidos a él. Ésto se conoce como ARP Spoofing.
 
 \end{document}
