@@ -36,8 +36,59 @@ de este trabajo es desarrollar una herramienta sencilla de diagnóstico de red
 y realizar un análisis a partir de la información que esta nos provee en
 distintos segmentos de red.
 
-\section{Análisis de la entropía}
-Para realizar este análisis, elegimos tres fuentes de información diferentes:
+\subsection{ARP}
+El trabajo, en particular, se enfoca en el monitoreo de las interacciones
+entre distintos \emph{hosts} mediante el protocolo ARP (\emph{Address
+Resolution Protocol}). El objetivo de ARP es permitirle, a los \emph{hosts} de
+una red, armar una tabla de asociaciones entre direcciones IP y direcciones de
+nivel de enlace. Esta tabla de de asociaciones, presente en cada \emph{host},
+se conoce como tabla ARP o \emph{cache} ARP.
+
+Cuando un \emph{host} quiere enviar un datagrama IP a otro \emph{host} o
+\emph{router} en la misma red, realiza lo siguiente:
+
+\begin{enumerate}
+    \item Verifica si en su tabla ARP existe una asociación para la dirección
+        IP destino del datagrama.
+    \item Si la hay, envía el datagrama a la dirección de nivel de enlace
+        respectiva.
+    \item Si no la hay, utiliza ARP para completar su tabla con la asociación
+        necesaria, para así luego enviar el datagrama a la dirección de nivel
+        de enlace respectiva.
+\end{enumerate}
+
+El mecanismo utilizado en este último caso consiste en enviar una consulta ARP
+vía \emph{broadcast} a la red. La consulta (\emph{request}) de ARP contiene la
+dirección IP de la que se desea conocer su dirección de nivel de enlace
+asociada. Cada \emph{host} en la red, una vez que recibe esta consulta, se
+ocupa de chequear si la IP por la que se consulta es la propia. En caso de que
+así sea, el \emph{host} envía una respuesta (\emph{reply}) de ARP, que
+contiene su dirección de nivel de enlace, al \emph{host} que hizo
+originalmente la consulta para que este pueda, entonces, completar su tabla
+ARP con la nueva asociaciación.
+
+\subsection{Herramientas desarrolladas}
+Para poder realizar los análisis, desarrollamos pequeñas herramientas que nos
+sirvieron para monitorear la red y generar gráficos sobre el comportamiento de
+esta.
+
+Para el monitoreo de la red, escribimos un breve \emph{script} en Python que,
+valiéndose de la biblioteca Scapy, nos permite generar archivos de texto con
+entradas que describen las interacciones ARP entre los distintos \emph{hosts}
+de la red.
+
+Escribimos, también, dos \emph{scripts} más, que procesan los archivos de texto
+antes nombrados y nos dan información relevante para nuestro posterior
+análisis. El primer \emph{script} da como salida valores o medidas
+relacionadas al análisis de las distintas fuentes de información que
+definimos; por ejemplo, la entropía de cada fuente. El segundo \emph{script}
+se ocupa de generar gráficos: De barras, y un grafo que relaciona \emph{hosts}
+en la red que interactúan mediante el protocolo ARP.
+
+
+\section{Análisis de las redes}
+Para realizar el análisis de la red, desde un punto de vista de la Teoría de
+la Información, elegimos tres fuentes de información diferentes:
 
 \begin{itemize}
     \item Fuente cuyos símbolos son IPs que realizan una consulta
@@ -46,8 +97,8 @@ Para realizar este análisis, elegimos tres fuentes de información diferentes:
         (\emph{reply}) vía el protocolo ARP.
     \item Fuente cuyos símbolos son IPs por las que se realiza una consulta
         (\emph{request}) vía el protocolo ARP.
-    \item Fuente cuyos símbolos son IPs que a la que le responden una consulta
-        (\emph{reply}) vía el protocolo ARP.
+    \item Fuente cuyos símbolos son IPs que a las que le responden una
+        consulta (\emph{reply}) vía el protocolo ARP.
 \end{itemize}
 
 Los datos fueron tomados de redes hogareñas.
@@ -100,8 +151,7 @@ red.
 \end{figure}
 
 La figura \ref{fig:red1requesters:count} muestra la cantidad de apariciones de
-cada símbolo. Podemos observar que las IPs 192.168.0.1 y 192.168.0.101 son las
-que más pedidos realizan.
+cada símbolo.
 
 \begin{figure}[h!]
     \centering                                                       
@@ -122,13 +172,19 @@ con la cantidad de pedidos que realizó cada IP.
     \label{fig:red1requesters:graph}
 \end{figure}
 
+En estos gráficos se observa claramente que los \emph{hosts} 192.168.0.1 y
+192.168.0.101 se destacan, tanto por la cantidad de pedidos que realizan como
+por la cantidad de \emph{hosts} con los que interactúan.
 
-Claramente se pueden distinguir dos nodos:
-192.168.0.1 que es el router, \'esto es l\'ogico considerando que \'el es el encargado de distribuir todo el tr\'afico de la red a los nodos correspondientes por lo que su tabla
-de direcciones macs tiene que estar correctamente actualizada el mayor tiempo
-posible.\\
-192.168.0.101 que es un host con un disco que comparte con el resto de la red.\\
-\newpage
+La IP 192.168.0.1 corresponde al \emph{router} presente en la red. Es lógico,
+entonces, que la cantidad de pedidos que este realiza sea tan alta, dado que
+es el encargado de distribuir todo el tráfico de la red a los \emph{hosts}
+correspondientes. Por esto, su tabla de direcciones MAC tiene que estar
+correctamente actualizada el mayor tiempo posible.
+
+Por otro lado, la IP 192.168.0.101 corresponde a un \emph{host} que sirve de
+servidor de archivos para el resto de la red. De allí que interactue con
+tantos otros \emph{hosts} y que envíe tantos pedidos ARP.
 
 \subsubsection{Símbolos: IPs que responden una consulta ARP}
 La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
@@ -181,7 +237,6 @@ sobre su dirección MAC; de ahí su probabilidad tan alta. Como se puede
 observar, la información aportada por este símbolo es considerablemente más
 baja que la aportada por los demás que poseen menor probabilidad. Incluso, la
 información que representa es más baja que la entropía de la fuente.
-\newpage
 
 \subsubsection{Símbolos: IPs por las que se realiza una consulta ARP}
 La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
@@ -241,10 +296,12 @@ cada símbolo.
     \label{fig:red1requested:count}
 \end{figure}
 
-En este caso, la IP más consultada en la red fue la 192.168.0.105. Al igual
-que en el punto anterior, por consecuencia de su alta probabilidad de aparecer
-en la fuente, su información no supera a la entropía que ofrece la red.
-\newpage
+En este caso, la IP más consultada en la red fue la 192.168.0.105. Esto tiene
+sentido, dado que, como vimos, es la que más respuestas dio. Al igual que en
+el punto anterior, por consecuencia de su alta probabilidad de aparecer en la
+fuente, su información no supera a la entropía que ofrece la red. Estimamos
+que simplemente se trata de un \emph{host} muy activo en el uso de los
+servicios de la red.
 
 \subsubsection{Símbolos: IPs a las que le respondieron una consulta ARP}
 La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
@@ -294,7 +351,21 @@ cada símbolo.
     \caption{Apariciones de los símbolos}
     \label{fig:red1replied:count}
 \end{figure}
-\newpage
+
+Aquí podemos observar que, si bien tanto la IP 192.168.0.1 (el \emph{router})
+como la IP 192.168.0.101 (servidor de archivos) realizaron ambas más de 400
+pedidos ARP, existe una gran disparidad en la cantidad de respuestas que estas
+recibieron. Esto puede deberse a muchas razones. Por ejemplo, a cuestiones
+físicas de la red que ocasionan pérdidas de paquetes, o a que algunos
+\emph{hosts} hacen consultas por su propia IP para asegurarse que no está
+duplicada en la red.
+
+En este caso particular, al analizar los datos, observamos que el
+\emph{router} realiza una gran cantidad de consultas por la IP 192.168.0.100 y
+el \emph{host} asociado a esta IP nunca responde. Esto puede deberse a
+problemas físicos en la red o a una falla o bloqueo intencional en el
+\emph{host} en cuestión.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %*********************************************************************%
@@ -531,21 +602,31 @@ cada símbolo.
 %*********************************************************************%
 %*********************************************************************%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Conclusión}
-A partir de los datos obtenidos se puede observar que hay más $requests$ que
-$replys$, ésto se debe entre otras cosas a que los hosts hacen consultas por
-su propia IP para asegurarse que no haya otro host con ésa dirección en la
-red. A su vez puede haber consultas que no son respondidas y paquetes que se
-pierden.\\ 
-También se desprende de los datos que el router (192.168.0.1 en ambas redes analizadas)
-es siempre uno de los nodos más activos de la red. Ésto tiene mucho sentido ya que la mayor parte del tráfico de la red pasa por él.\\
-Nos resultó extraño que apareciera como IP fuente de algunos
-pedidos la IP 0.0.0.0 pero investigando un poco nos dimos cuenta que ésto
-sucede cuando un host se conecta a la red y se hace para verificar que no haya
-otro host con la misma IP.\\
-Otra conclusión que pudimos sacar, no tanto de los datos sino de trabajar con el protocolo
-es que éste no es seguro ya que permite que un host se haga pasar por otro,
-respondiendo mensajes ARP que no estaban dirigidos a él. Ésto se conoce como ARP Spoofing.
+
+\section{Conclusiones}
+El trabajo nos permitió conocer el funcionamiento del protocolo ARP y observar
+su uso en redes reales. Además de lo ya comentado anteriormente, de la
+observación e investigación surgieron algunas conclusiones:
+
+\begin{itemize}
+    \item El protocolo ARP es muy importante, ya que resuelve el problema de
+        traducción entre direcciones de nivel de red y direcciones de nivel de
+        enlace. Su función es crítica en las redes de acceso múltiple y, si
+        bien es usado comúnmente para traducir direcciones IP en direcciones
+        ethernet, se ha implementado para la traducción entre diversos
+        protocolos.
+    \item El \emph{router} es siempre uno de los nodos más activos en la red
+        y, a partir de la simple observación de los datos, es muy sencillo
+        identificarlo. Esto tiene sentido, ya que la mayor parte del tráfico
+        de la red pasa por él.
+    \item Nos llamó la atención que la IP 0.0.0.0 apareciera como IP fuente de
+        algunos pedidos. Investigando un poco, llegamos a la conclusión que
+        esto sucede cuando un host recién se conecta a la red y se hace para
+        verificar que no haya otro host con la misma IP.
+    \item Al trabajar con el protocolo, notamos que este no es seguro, ya que
+        permite que un \emph{host} se haga pasar por otro, respondiendo
+        mensajes ARP que no estaban dirigidos a él. Esto se conoce como ARP
+        \emph{spoofing}.
+\end{itemize}
 
 \end{document}
