@@ -126,7 +126,7 @@ Claramente se pueden distinguir dos nodos:
 de direcciones macs tiene que estar correctamente actualizada el mayor tiempo
 posible.\\
 192.168.0.101 que es un host con un disco que comparte con el resto de la red.\\
-
+\newpage
 
 \subsubsection{Símbolos: IPs que responden una consulta ARP}
 La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
@@ -179,6 +179,7 @@ sobre su dirección MAC; de ahí su probabilidad tan alta. Como se puede
 observar, la información aportada por este símbolo es considerablemente más
 baja que la aportada por los demás que poseen menor probabilidad. Incluso, la
 información que representa es más baja que la entropía de la fuente.
+\newpage
 
 \subsubsection{Símbolos: IPs por las que se realiza una consulta ARP}
 La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
@@ -241,6 +242,57 @@ cada símbolo.
 En este caso, la IP más consultada en la red fue la 192.168.0.105. Al igual
 que en el punto anterior, por consecuencia de su alta probabilidad de aparecer
 en la fuente, su información no supera a la entropía que ofrece la red.
+\newpage
+
+\subsubsection{Símbolos: IPs a las que le respondieron una consulta ARP}
+La siguiente tabla muestra, para cada símbolo, su cantidad de apariciones y
+sus medidas de probabilidad e información asociadas.
+
+\vskip10pt
+
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Símbolo & Consultas & Probabilidad & Información \\
+  \hline
+  192.168.0.105 & 86.0 & 0.14527027027 & 2.78318861093\\
+  \hline
+  192.168.0.104 & 21.0 & 0.035472972973 & 4.81713594285\\
+  \hline
+  192.168.0.1 & 84.0 & 0.141891891892 & 2.81713594285\\
+  \hline
+  192.168.0.101 & 401.0 & 0.677364864865 & 0.561994939174\\
+  \hline
+
+\end{tabular}
+
+\vskip10pt
+
+La entropía de la fuente es:
+
+$$H(S) = 1.35559706951$$
+
+En la figura \ref{fig:red1replied:infoentro}, puede observarse gráficamente
+los valores de información de cada símbolo en relación con la entropía de la
+red.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{respondidas1.png}
+    \caption{Información de cada símbolo, en relación con la
+        entropía de la red}
+    \label{fig:red1replied:infoentro}
+\end{figure}
+
+La figura \ref{fig:red1replied:count} muestra la cantidad de apariciones de
+cada símbolo.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=300pt]{red1replied.png}
+    \caption{Apariciones de los símbolos}
+    \label{fig:red1replied:count}
+\end{figure}
+\newpage
 
 \section{Conclusión}
 A partir de los datos obtenidos se puede observar que hay más $requests$ que
