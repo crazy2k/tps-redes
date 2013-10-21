@@ -17,7 +17,7 @@ from time import *
 key = "6f7ef1159eb53bba3ebd9e24969aa216d0dec8ce85e483021c14da8546985653"
 geoipUrl = "http://api.ipinfodb.com/v3/ip-city/?key=" + key +"&format=json"
 
-def traceroute(ip):
+def traceroute(ip, m=2):
 	myTtl = 1
 	cantRTTs = 0
 	muestras = Set([])
@@ -32,7 +32,7 @@ def traceroute(ip):
 
 	distancias = (host.src,decoded["cityName"] + " "+decoded["countryName"],decoded["latitude"],decoded["longitude"]),
 
-	while True and myTtl < 21:
+	while True and myTtl < 50:
 		ipPacket = IP(dst=ip, ttl=myTtl)
 		t1=time()
 		ans = sr(ipPacket/ICMP(), timeout=5, verbose=0)
@@ -49,6 +49,9 @@ def traceroute(ip):
 			cantRTTs = cantRTTs + 1
 			muestras.add(RTT2-RTT1)
 		
+			if((RTT2-RTT1) > (R+m*std_dev)):
+				print "ENLACE TRANSATLANTICO"
+
 		s1 = sum(x for x in muestras)
 		s2 = sum(x*x for x in muestras)
 		R = s1/cantRTTs

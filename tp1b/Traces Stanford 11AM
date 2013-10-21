@@ -1,0 +1,68 @@
+1 127.0.0.1  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772
+1 192.168.0.1  -, -, -   Lat=0 Long=0   Time=74.3329524994 ms
+2 181.167.32.1  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=25.3200531006 ms
+3 * no response *
+4 * no response *
+5 200.89.165.49  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=27.2970199585 ms
+6 200.89.165.2  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=42.1919822693 ms
+7 * no response *
+8 * no response *
+9 200.89.164.89  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=49.663066864 ms
+10 200.89.165.86  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=101.961135864 ms
+11 208.178.245.21  AURORA, COLORADO, UNITED STATES   Lat=39.7294 Long=-104.832   Time=62.5610351562 ms
+12 64.214.174.246  HIALEAH, FLORIDA, UNITED STATES   Lat=25.8576 Long=-80.2781   Time=321.022987366 ms
+13 72.52.92.69  CINCINNATI, OHIO, UNITED STATES   Lat=39.162 Long=-84.4569   Time=330.627918243 ms
+14 216.218.209.118  FREMONT, CALIFORNIA, UNITED STATES   Lat=37.518 Long=-121.929   Time=354.729890823 ms
+15 68.65.168.33  PALO ALTO, CALIFORNIA, UNITED STATES   Lat=37.4419 Long=-122.143   Time=237.688064575 ms
+16 171.64.255.214  PALO ALTO, CALIFORNIA, UNITED STATES   Lat=37.4419 Long=-122.143   Time=227.25892067 ms
+17 171.64.64.64  PALO ALTO, CALIFORNIA, UNITED STATES   Lat=37.4419 Long=-122.143   Time=187.618017197 ms
+
+
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta AURORA UNITED STATES 9552.8001484
+Desde AURORA UNITED STATES Hasta HIALEAH UNITED STATES 2753.5159081
+Desde HIALEAH UNITED STATES Hasta CINCINNATI UNITED STATES 1531.60378915
+Desde CINCINNATI UNITED STATES Hasta FREMONT UNITED STATES 3253.62590031
+Desde FREMONT UNITED STATES Hasta PALO ALTO UNITED STATES 20.7159366877
+Desde PALO ALTO UNITED STATES Hasta PALO ALTO UNITED STATES 0.0
+Desde PALO ALTO UNITED STATES Hasta PALO ALTO UNITED STATES 0.0
+
+La distancia total recorrida hasta llegar al enlace final fue de: 17112.2616826
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+ 1  192.168.0.1 (192.168.0.1)  1 ms  1 ms  1 ms
+ 2  1-32-167-181.fibertel.com.ar (181.167.32.1)  18 ms  24 ms  19 ms
+ 3  * * *
+ 4  * * *
+ 5  57-165-89-200.fibertel.com.ar (200.89.165.57) [MPLS: Label 16014 Exp 0] More labels  12 ms 9-165-89-200.fibertel.com.ar (200.89.165.9) More labels  10 ms 13-165-89-200.fibertel.com.ar (200.89.165.13) More labels  11 ms
+ 6  2-165-89-200.fibertel.com.ar (200.89.165.2) [MPLS: Label 30782 Exp 0] More labels  7 ms More labels  7 ms More labels  11 ms
+ 7  * * *
+ 8  * * *
+ 9  89-164-89-200.fibertel.com.ar (200.89.164.89) [MPLS: Label 16115 Exp 0]  10 ms  11 ms  12 ms
+10  86-165-89-200.fibertel.com.ar (200.89.165.86)  15 ms  13 ms  12 ms
+11  208.178.245.21 (208.178.245.21)  11 ms  11 ms  8 ms
+12  Hurrican-Electric-LLC.Port-channel100.ar3.SJC2.gb (64.214.174.246)  287 ms  282 ms  275 ms
+13  10gigabitethernet5-2.core1.pao1.he.net (72.52.92.69)  282 ms  276 ms  303 ms
+14  stanford-university.10gigabitethernet1-4.core1.pa (216.218.209.118)  278 ms  276 ms  280 ms
+15  boundarya-rtr.Stanford.EDU (68.65.168.33)  176 ms  174 ms  176 ms
+16  171.64.255.214 (171.64.255.214)  180 ms  180 ms  180 ms
+17  CS.Stanford.EDU (171.64.64.64)  175 ms  174 ms  176 ms
+
+
+
+
+

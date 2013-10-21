@@ -1,0 +1,101 @@
+
+1 127.0.0.1  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772
+1 192.168.0.1  -, -, -   Lat=0 Long=0   Time=99.9851226807 ms
+2 181.167.32.1  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=71.9468593597 ms
+3 * no response *
+4 * no response *
+5 200.89.165.9  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=59.6528053284 ms
+6 200.89.165.2  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=64.2230510712 ms
+7 * no response *
+8 * no response *
+9 200.89.164.89  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=61.3749027252 ms
+10 200.89.165.86  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=83.419084549 ms
+11 200.89.165.85  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=63.4570121765 ms
+12 200.89.165.197  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=71.1388587952 ms
+13 200.89.165.222  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=64.3270015717 ms
+14 208.178.244.125  BROOMFIELD, COLORADO, UNITED STATES   Lat=39.8828 Long=-105.106   Time=74.1398334503 ms
+15 67.17.105.238  BROOMFIELD, COLORADO, UNITED STATES   Lat=39.8828 Long=-105.106   Time=230.345010757 ms
+16 * no response *
+17 4.69.155.126  NEW YORK CITY, NEW YORK, UNITED STATES   Lat=40.7143 Long=-74.006   Time=335.780143738 ms
+18 4.69.134.69  BROOMFIELD, COLORADO, UNITED STATES   Lat=39.8828 Long=-105.106   Time=288.49196434 ms
+19 4.69.137.77  LOS ANGELES, CALIFORNIA, UNITED STATES   Lat=34.0522 Long=-118.244   Time=262.778997421 ms
+20 4.69.143.93  FRANKFURT AM MAIN, HESSEN, GERMANY   Lat=50.1155 Long=8.68417   Time=286.922931671 ms
+21 4.69.133.101  MUNCHEN, BAYERN, GERMANY   Lat=48.6967 Long=13.4631   Time=295.927047729 ms
+22 195.50.119.98  LONDON, ENGLAND, UNITED KINGDOM   Lat=51.5085 Long=-0.12574   Time=284.424066544 ms
+23 146.97.33.41  LONDON, ENGLAND, UNITED KINGDOM   Lat=51.5085 Long=-0.12574   Time=298.891067505 ms
+24 146.97.33.26  LONDON, ENGLAND, UNITED KINGDOM   Lat=51.5085 Long=-0.12574   Time=275.838136673 ms
+25 146.97.37.186  LONDON, ENGLAND, UNITED KINGDOM   Lat=51.5085 Long=-0.12574   Time=270.98608017 ms
+26 146.97.130.2  EDINBURGH, SCOTLAND, UNITED KINGDOM   Lat=55.9521 Long=-3.19648   Time=288.527965546 ms
+27 192.84.5.93  CAMBRIDGE, ENGLAND, UNITED KINGDOM   Lat=51.7333 Long=-2.36667   Time=266.388893127 ms
+28 192.84.5.138  CAMBRIDGE, ENGLAND, UNITED KINGDOM   Lat=51.7333 Long=-2.36667   Time=297.513961792 ms
+29 193.60.89.241  CAMBRIDGE, ENGLAND, UNITED KINGDOM   Lat=51.7333 Long=-2.36667   Time=333.982944489 ms
+30 131.111.150.25  CAMBRIDGE, ENGLAND, UNITED KINGDOM   Lat=51.7333 Long=-2.36667   Time=294.642925262 ms
+
+
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BUENOS AIRES ARGENTINA 0.0
+Desde BUENOS AIRES ARGENTINA Hasta BROOMFIELD UNITED STATES 9580.5139258
+Desde BROOMFIELD UNITED STATES Hasta BROOMFIELD UNITED STATES 0.0
+Desde BROOMFIELD UNITED STATES Hasta NEW YORK CITY UNITED STATES 2628.22704882
+Desde NEW YORK CITY UNITED STATES Hasta BROOMFIELD UNITED STATES 2628.22704882
+Desde BROOMFIELD UNITED STATES Hasta LOS ANGELES UNITED STATES 1334.67433191
+Desde LOS ANGELES UNITED STATES Hasta FRANKFURT AM MAIN GERMANY 9312.75361543
+Desde FRANKFURT AM MAIN GERMANY Hasta MUNCHEN GERMANY 380.396530807
+Desde MUNCHEN GERMANY Hasta LONDON UNITED KINGDOM 1017.74232927
+Desde LONDON UNITED KINGDOM Hasta LONDON UNITED KINGDOM 0.0
+Desde LONDON UNITED KINGDOM Hasta LONDON UNITED KINGDOM 0.0
+Desde LONDON UNITED KINGDOM Hasta LONDON UNITED KINGDOM 0.0
+Desde LONDON UNITED KINGDOM Hasta EDINBURGH UNITED KINGDOM 534.267276288
+Desde EDINBURGH UNITED KINGDOM Hasta CAMBRIDGE UNITED KINGDOM 472.77730223
+Desde CAMBRIDGE UNITED KINGDOM Hasta CAMBRIDGE UNITED KINGDOM 0.0
+Desde CAMBRIDGE UNITED KINGDOM Hasta CAMBRIDGE UNITED KINGDOM 0.0
+Desde CAMBRIDGE UNITED KINGDOM Hasta CAMBRIDGE UNITED KINGDOM 0.0
+
+La distancia total recorrida hasta llegar al enlace final fue de: 27889.5794094
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ 1  192.168.0.1 (192.168.0.1)  3 ms  1 ms  1 ms
+ 2  1-32-167-181.fibertel.com.ar (181.167.32.1)  9 ms  8 ms  7 ms
+ 3  * * *
+ 4  * * *
+ 5  33-165-89-200.fibertel.com.ar (200.89.165.33) [MPLS: Label 16014 Exp 0] More labels  11 ms 13-165-89-200.fibertel.com.ar (200.89.165.13) More labels  7 ms mail.ddsa.com.ar (200.89.165.49) More labels  11 ms
+ 6  2-165-89-200.fibertel.com.ar (200.89.165.2) [MPLS: Label 30782 Exp 0] More labels  13 ms More labels  22 ms More labels  12 ms
+ 7  * * *
+ 8  * * *
+ 9  89-164-89-200.fibertel.com.ar (200.89.164.89) [MPLS: Label 16115 Exp 0]  9 ms  28 ms  8 ms
+10  86-165-89-200.fibertel.com.ar (200.89.165.86)  10 ms  10 ms  17 ms
+11  85-165-89-200.fibertel.com.ar (200.89.165.85) [MPLS: Label 16061 Exp 0]  13 ms  24 ms  12 ms
+12  197-165-89-200.fibertel.com.ar (200.89.165.197) [MPLS: Label 16032 Exp 0]  9 ms  9 ms  8 ms
+13  222-165-89-200.fibertel.com.ar (200.89.165.222)  12 ms  11 ms  12 ms
+14  xe-1-2-1.ar3.eze1.gblx.net (208.178.244.125)  10 ms  8 ms  7 ms
+15  po8-30G.ar5.NYC1.gblx.net (67.17.72.114)  195 ms po4-40G.ar5.NYC1.gblx.net (67.17.105.238)  159 ms  156 ms
+16  * * *
+17  vlan70.csw2.NewYork1.Level3.net (4.69.155.126) [MPLS: Label 1947 Exp 0]  249 ms vlan90.csw4.NewYork1.Level3.net (4.69.155.254) [MPLS: Label 1558 Exp 0]  246 ms  248 ms
+18  ae-91-91.ebr1.NewYork1.Level3.net (4.69.134.77) [MPLS: Label 1967 Exp 0]  255 ms  255 ms  240 ms
+19  ae-44-44.ebr2.London1.Level3.net (4.69.137.77) [MPLS: Label 1638 Exp 0]  233 ms ae-43-43.ebr2.London1.Level3.net (4.69.137.73)  250 ms ae-42-42.ebr2.London1.Level3.net (4.69.137.69)  249 ms
+20  vlan104.ebr1.London1.Level3.net (4.69.143.97) [MPLS: Label 1496 Exp 0]  242 ms vlan103.ebr1.London1.Level3.net (4.69.143.93)  247 ms vlan104.ebr1.London1.Level3.net (4.69.143.97)  251 ms
+21  ae-4-4.car1.Manchesteruk1.Level3.net (4.69.133.101)  219 ms  227 ms  228 ms
+22  195.50.119.98 (195.50.119.98)  232 ms  231 ms  231 ms
+23  ae29.erdiss-sbr1.ja.net (146.97.33.41)  231 ms  226 ms  219 ms
+24  ae30.lowdss-sbr1.ja.net (146.97.33.26)  231 ms  223 ms  245 ms
+25  ae0.camb-rbr2.ja.net (146.97.37.186)  227 ms  231 ms  236 ms
+26  University-of-Cambridge.Camb-rbr1.eastern.ja.net (146.97.130.2)  245 ms  242 ms  237 ms
+27  route-enet.route-mill.net.cam.ac.uk (192.84.5.93)  237 ms  239 ms  226 ms
+28  route-mill.route-nwest.net.cam.ac.uk (192.84.5.138)  233 ms  235 ms  237 ms
+29  primary.admin.cam.ac.uk (131.111.150.25)  235 ms  237 ms  240 ms
+
+
+
