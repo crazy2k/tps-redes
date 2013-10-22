@@ -1,0 +1,111 @@
+\documentclass[a4paper,spanish,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{vmargin}
+%\usepackage{algorithmic}
+%\usepackage{float}
+\usepackage{lastpage}
+\usepackage{caratula}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{url}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ECO Para jugar con el footer. 		%
+\usepackage{fancyhdr}					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%\usepackage{hyphenat}
+%%\exhyphenpenalty=10000
+%%\hyphenpenalty=10000
+\setmarginsrb{10mm}% left margin
+{15mm}% top margin
+{15mm}% right margin
+{10mm}% bottom margin
+{0mm}{20mm}{0mm}{30mm}% we needed -- related to headers and footers
+
+%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[RO, CE]{Teor\'{i}a de las Comunicaciones}
+%\fancyhead[LO, CE]{Grupo X}
+\fancyfoot[C]{ Página \thepage\ de \pageref{LastPage} }
+
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+
+\newcommand{\ite}[3]{\textbf{if} #1 \textbf{then} \\ \hspace*{7mm}\vbox{#2} \\ \textbf{else} \\ \hspace*{7mm}\vbox{#3} \\ \textbf{fi} }
+\newcommand{\itf}[3]{\textbf{if} #1 \textbf{then} \\ \hspace*{7mm}\vbox{#2} \\ \textbf{fi} \\ }
+\newcommand{\whi}[2]{\textbf{while (} #1 \textbf{)} \\ \hspace*{7mm}\vbox{\noindent #2} }
+\newcommand{\tades}[2]{\noindent\textbf{TAD} #1 \textbf{ES} #2 \\}
+\newcommand{\punt}[1]{($\ast$#1)}
+\newcommand{\fle}{$\rightarrow$}
+
+
+%%%%%%%%%%
+
+\begin{document}
+
+
+%*************************************************************%
+%                                                             %
+% CARATULA                                                    %
+%                                                             %
+%*************************************************************%
+    \materia{Teor\'{i}a de las Comunicaciones}
+
+    \titulo{Trabajo Práctico 1b}
+  
+    %\subtitulo{Tres problemas de programación}
+
+    %\grupo{Grupo 255}
+
+    \integrante{Antonio, Pablo}{290/08}{pabloa@gmail.com}
+	\integrante{Ferrari, Gastón}{775/07}{gastonferrari5@hotmail.com}
+    \maketitle
+    
+    \lhead{Trabajo Práctico 2}
+    
+%*************************************************************%
+%                                                             %
+% INFORME                                                     %
+%                                                             %
+%*************************************************************%
+
+	\tableofcontents
+	\newpage
+
+\section{Introducción}
+\indent En este trabajo practico nos dedicaremos a explorar el nivel de red. Para hacerlo, implementaremos la herramienta Traceroute, para luego usarla para explorar y conocer mas la red.\\
+\indent También analizaremos lo compleja que es la red y las caracteristicas de la misma.
+
+\subsection{Traceroute}
+\indent Traceroute es una herramienta de diagnóstico que permite seguir la pista
+de los paquetes que vienen desde un host (punto de red). Es decir, se envía un
+paquete a una dirección IP y por cada router por el que pasa el paquete hasta
+llegar al destino, se devuelve un paquete con la información de ese enlace. Asi,
+es posible lograr saber por donde pasa un paquete hasta que llega a su destino
+final. Se obtiene además una estadística del RTT o latencia de red de esos
+paquetes, lo que viene a ser una estimación de la distancia a la que están los
+extremos de la comunicación.
+
+\subsection{ICMP}
+\indent ICMP (Internet Control Message Protocol) es el sub protocolo de control
+y notificación de errores del Protocolo de Internet (IP). Como tal, se usa para
+enviar mensajes de error, indicando por ejemplo que un servicio determinado no
+está disponible o que un router o host no puede ser localizado. Es importante
+destacar que este protocolo no intecambia datos. Los paquetes ICMP viajan dentro
+de los paquetes IP como si fueran de un protocolo de nivel superior. 
+
+
+
+\newpage
+
+\input{primeraParte.tex}
+
+ 
+\end{document}

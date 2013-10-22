@@ -1,0 +1,11 @@
+Traceroute implementado en Scapy
+Univ.			1AM			11AM			7PM			3AM
+Cambridge		0.249s		0.294s			0.254s		0.236s
+Stanford		0.188s		0.187s			0.196s		0.198s
+MSU				0.313s		0.281s			0.324s		0.273s
+
+Traceroute de Linux
+Univ.			1AM			11AM			7PM
+Cambridge		0.248s		0.237s			0.271s		0.224s
+Stanford		0.176s		0.175s			0.180s		0.179s
+MSU				0.279s		0.266s			0.281s		0.260s
