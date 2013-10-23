@@ -1,8 +1,58 @@
 \newpage
-\section{Primera Parte: RTT}
-\indent En esta primera parte vamos a ver como el RTT se ve afectado por el tráfico en internet, para esto realizamos pruebas en diferentes horarios y con IPs destino en diferentes partes del mundo.\\
 
-\indent Los destinos que elegimos fueron Cambridge University (Inglaterra), Stanford University (Estados Unidos) y Moscow State University (Rusia).\\
+\section{Primera Parte: Estimación de RTT}
+En esta primera parte del trabajo, el objetivo es realizar mediciones de
+\emph{round-trip time} tanto teóricas como empíricas y razonar alrededor de
+los resultados.
+
+\subsection{Caracterización de los experimentos}
+
+Elegimos tres universidades en distintas partes del mundo (Cambridge
+University, Inglaterra; Stanford University, Estados Unidos; Moscow State
+University, Rusia) y, tomando la dirección IP del dominio principal de cada
+una, realizamos las siguientes mediciones:
+\begin{enumerate}
+    \item Cálculo del RTT teórico. Para esto, primero definimos la ubicación
+        geográfica de la dirección haciendo uso de un servicio de
+        geolocalización. Con ella, calculamos la distancia lineal desde ese
+        punto hasta el que sería el origen de nuestras mediciones. Tomando un
+        tiempo de propagación de la señal de $2 \times 10^5$ km/s, calculamos
+        el tiempo que tardaría la ida de un paquete hasta el servidor destino
+        y la llegada de una respuesta.
+    \item Medición de RTT mediante una herramienta propia. Utilizando una
+        herramienta de \emph{traceroute} desarrollada por nosotros usando la
+        biblioteca Scapy, calculamos el RTT empírico a la dirección destino.
+    \item Medición de RTT mediante una herramienta del sistema operativo.
+        Idéntico al caso anterior pero esta vez usando el \emph{traceroute}
+        disponible en una distribución de GNU/Linux.
+    \item Medición de RTT teórico teniendo en cuenta el camino recorrido por
+        los paquetes. Similar al cálculo teórico anterior, esta vez teniendo
+        en cuenta las ubicaciones geográficas de cada uno de los routers
+        intermedios.
+\end{enumerate}
+
+Previamente a las mediciones, se esperaba que el RTT teórico lineal fuera, en
+general, muy menor a los obtenidos empíricamente, puesto que este, además de
+dejar de lado retardos ocasionados por los routers en distintas horas del día,
+asumía la existencia de un medio de comunicación (fibra óptica) cubriendo la
+menor distancia entre el origen y el destino de la medición. Dado que el RTT
+teórico del camino no asume esto último, se esperaba que este se ajustara más
+a los valores empíricos. Por otro lado, se esperaba ver que los valores de RTT
+empíricos arrojados por ambas herramientas de \emph{traceroute} fueran
+cercanos, ya que las mediciones se realizarían en condiciones similares y los
+métodos para realizar los cálculos serían similares.
+
+Asimismo, como realizaríamos mediciones para distintos momentos del día, se
+esperaba ver diferencias en los RTT según el horario, aunque no se suponía
+ningún patrón en particular.
+
+\subsection{Resultados de los experimentos}
+
+Los gráficos \ref{fig:cambridge:count}, \ref{fig:stanford:count} y
+\ref{fig:msu:count} muestran las mediciones para la Cambridge University
+(Inglaterra), Stanford University (Estados Unidos) y la Moscow State
+University (Rusia) respectivamente. En ellos pueden verse los valores para
+distintos horarios del día.
 
 \begin{figure}[h!]
     \centering
@@ -24,6 +74,8 @@
     \caption{Moscow State University}
     \label{fig:msu:count}
 \end{figure}
+
+\subsection{Análisis de los resultados}
 
 \indent Nos pareció interesante saber cuantos km de mas tuvimos que recorrer dado que, por razones obvias, no tenemos un enlace punto a punto desde nuestras casas hacia el destino. Es por eso que están graficados ambos RTTs teóricos, creimos que tomando la distancia recorrida hasta llegar a destino iba a dar un RTT más ajustado a la realidad y así fue.\\
 
