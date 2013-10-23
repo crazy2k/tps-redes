@@ -12,23 +12,24 @@ University, Inglaterra; Stanford University, Estados Unidos; Moscow State
 University, Rusia) y, tomando la dirección IP del dominio principal de cada
 una, realizamos las siguientes mediciones:
 \begin{enumerate}
-    \item Cálculo del RTT teórico. Para esto, primero definimos la ubicación
-        geográfica de la dirección haciendo uso de un servicio de
+    \item \textbf{Cálculo del RTT teórico.} Para esto, primero definimos la
+        ubicación geográfica de la dirección haciendo uso de un servicio de
         geolocalización. Con ella, calculamos la distancia lineal desde ese
         punto hasta el que sería el origen de nuestras mediciones. Tomando un
         tiempo de propagación de la señal de $2 \times 10^5$ km/s, calculamos
         el tiempo que tardaría la ida de un paquete hasta el servidor destino
-        y la llegada de una respuesta.
-    \item Medición de RTT mediante una herramienta propia. Utilizando una
-        herramienta de \emph{traceroute} desarrollada por nosotros usando la
-        biblioteca Scapy, calculamos el RTT empírico a la dirección destino.
-    \item Medición de RTT mediante una herramienta del sistema operativo.
-        Idéntico al caso anterior pero esta vez usando el \emph{traceroute}
-        disponible en una distribución de GNU/Linux.
-    \item Medición de RTT teórico teniendo en cuenta el camino recorrido por
-        los paquetes. Similar al cálculo teórico anterior, esta vez teniendo
-        en cuenta las ubicaciones geográficas de cada uno de los routers
-        intermedios.
+        y la llegada de una respuesta o reconocimiento inmediato.
+    \item \textbf{Medición de RTT teórico teniendo en cuenta el camino
+        recorrido por los paquetes.} Similar al cálculo teórico anterior, esta
+        vez teniendo en cuenta las ubicaciones geográficas de cada uno de los
+        routers intermedios.
+    \item \textbf{Medición de RTT mediante una herramienta propia.} Utilizando
+        una herramienta de \emph{traceroute} desarrollada por nosotros usando
+        la biblioteca Scapy, calculamos el RTT empírico a la dirección
+        destino.
+    \item \textbf{Medición de RTT mediante una herramienta del sistema
+        operativo.} Idéntico al caso anterior pero esta vez usando el
+        \emph{traceroute} disponible en una distribución de GNU/Linux.
 \end{enumerate}
 
 Previamente a las mediciones, se esperaba que el RTT teórico lineal fuera, en
@@ -36,11 +37,13 @@ general, muy menor a los obtenidos empíricamente, puesto que este, además de
 dejar de lado retardos ocasionados por los routers en distintas horas del día,
 asumía la existencia de un medio de comunicación (fibra óptica) cubriendo la
 menor distancia entre el origen y el destino de la medición. Dado que el RTT
-teórico del camino no asume esto último, se esperaba que este se ajustara más
-a los valores empíricos. Por otro lado, se esperaba ver que los valores de RTT
-empíricos arrojados por ambas herramientas de \emph{traceroute} fueran
-cercanos, ya que las mediciones se realizarían en condiciones similares y los
-métodos para realizar los cálculos serían similares.
+teórico del camino no asume esto último, se esperaba que este, si bien fuera
+menor a los valores empíricos, se ajustara más a estos.
+
+Por otro lado, se esperaba ver que los valores de RTT empíricos arrojados por
+ambas herramientas de \emph{traceroute} fueran cercanos, ya que las mediciones
+se realizarían en condiciones similares y los métodos para realizar los
+cálculos serían parecidos.
 
 Asimismo, como realizaríamos mediciones para distintos momentos del día, se
 esperaba ver diferencias en los RTT según el horario, aunque no se suponía
@@ -48,11 +51,11 @@ ningún patrón en particular.
 
 \subsection{Resultados de los experimentos}
 
-Los gráficos \ref{fig:cambridge:count}, \ref{fig:stanford:count} y
+Las figuras \ref{fig:cambridge:count}, \ref{fig:stanford:count} y
 \ref{fig:msu:count} muestran las mediciones para la Cambridge University
 (Inglaterra), Stanford University (Estados Unidos) y la Moscow State
-University (Rusia) respectivamente. En ellos pueden verse los valores para
-distintos horarios del día.
+University (Rusia) respectivamente. En estos gráficos pueden verse los valores
+para distintos horarios del día.
 
 \begin{figure}[h!]
     \centering
@@ -76,12 +79,34 @@ distintos horarios del día.
 \end{figure}
 
 \subsection{Análisis de los resultados}
+De los gráficos resultantes de los experimentos, pueden observarse varias
+cosas que discutiremos a continuación.
 
-\indent Nos pareció interesante saber cuantos km de mas tuvimos que recorrer dado que, por razones obvias, no tenemos un enlace punto a punto desde nuestras casas hacia el destino. Es por eso que están graficados ambos RTTs teóricos, creimos que tomando la distancia recorrida hasta llegar a destino iba a dar un RTT más ajustado a la realidad y así fue.\\
+En primer lugar, observamos que, efectivamente, el RTT teórico que considera
+el camino se acerca más a los valores empíricos que el RTT teórico lineal. La
+justificación es, como se dijo antes, que este RTT no asume que el origen y
+destino de los experimentos están conectados mediante un medio (fibra óptica)
+que los une cubriendo la menor distancia, sino que tiene en cuenta las
+desviaciones por los routers intermedios.
 
-\indent Lo primero que se observa es como a la madrugada el RTT es menor en las dos rutas hacia Europa debido a que en ese horario el tráfico es menor tanto en el origen como en el destino, esto no sucede en la ruta hacia Estados Unidos ya que al ser en la costa oeste 4hs menos que en Buenos Aires a esa hora todavía se registra un tráfico mayor.\\
+No obstante, cabe mencionar que, a diferencia de lo que se esperaba, este RTT
+dio, para el caso de la Cambridge University, valores mayores a los empíricos.
+Creemos que esto puede deberse a un error en la herramienta de geolocalización
+utilizada (hay un desvío de unos 1000 km en uno de los últimos \emph{hops}).
+También puede estar sucediendo que ese hop, que tiene una IP de Escocia, en
+realidad sea un servidor ubicado en Inglaterra pero que por alguna razón tiene
+una IP del primer país. Algo similar ocurre con uno de los primeros hops, que
+tiene una IP de Estados Unidos pero el RTT medido a ese host es de 28ms, un
+valor más acorde a un host nacional.
 
-\indent En el primer gráfico llama la atención que el RTT teórico sea superior en algunos casos al RTT observado, creemos que esto se debe a un posible error en la herramienta de geolocalización ya que hay un desvío de unos 1000km en uno de los últimos hops. También puede estar sucediendo que ese hop, que tiene una IP de Escocia, en realidad sea un servidor que está en Inglaterra pero por alguna razón tiene una IP de ese país. Lo mismo sucede con uno de los primeros hops, que tiene una IP de Estados Unidos pero el RTT medido es de 28ms.\\
+Por otro lado, se observa que, en los horarios de la madrugada, hora local, el
+RTT disminuye en las dos rutas hacia Europa. Entendemos que esto se debe a que
+en esos horarios el tráfico es menor tanto en el origen como en el destino.
+Esto no se da de la misma forma en la ruta hacia Estados Unidos, ya que, al
+ser en la costa oeste 4 hs menos que en Buenos Aires, a esa hora todavía se
+registra un tráfico alto.
 
-\indent Por último vimos que los resultados de las dos herramientas son bastante similares, probablemente el hecho de que la implementación de Traceroute del sistema operativo haga 3 intentos por hop sea la razón por la cual su curva sea más suave.\\
-
+Por último, vimos que los resultados de las dos herramientas son bastante
+similares. Probablemente el hecho de que la implementación de
+\emph{traceroute} del sistema operativo haga 3 intentos por hop sea la razón
+por la cual su curva es más suave.
