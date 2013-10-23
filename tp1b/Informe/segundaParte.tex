@@ -1,0 +1,25 @@
+\section{Segunda Parte: Búsqueda de enlaces transatlánticos}
+En esta segunda parte, el objetivo es encontrar los enlaces transatlánticos en
+las rutas ya estudiadas en la primera parte.
+
+\subsection{Caracterización de los experimentos}
+Para esta segunda parte, modificamos nuestra herramienta de \emph{traceroute}
+con el objetivo de que esta sea capaz de estimar cuáles de los enlaces pueden
+ser transatlánticos. Para esto, se implementó la heurística sugerida que marca
+un enlace como transatlántico cuando se cumple que:
+
+$$r > R + m.d$$
+
+siendo:
+\begin{itemize}
+    \item $r$ la diferencia entre los RTTs de ambas puntas del enlace,
+    \item $R$ el promedio de las diferencias de los RTTs entre hops sucesivos
+        durante la ejecución del \emph{traceroute},
+    \item $d$ el desvío estándar de estas mediciones y
+    \item $m$ fijado en 2.
+\end{itemize}
+
+\subsection{Resultados de los experimentos}
+
+\subsection{Análisis de los resultados}
+
