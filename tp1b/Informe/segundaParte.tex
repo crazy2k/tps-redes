@@ -20,6 +20,25 @@ siendo:
 \end{itemize}
 
 \subsection{Resultados de los experimentos}
+Lamentablemente en todas los experimentos que realizamos no pudimos identificar ningún enlace transatlántico real pero pudimos distinguir puntos en común entre los experimentos que nos dieron algunos indicios de por qué no los pudimos identificar.\\
+Por ejemplo, en la ruta hacia Cambridge notamos un salto muy grande entre dos hops:\\
 
-\subsection{Análisis de los resultados}
+13 200.89.165.222  BUENOS AIRES, DISTRITO FEDERAL, ARGENTINA   Lat=-34.6132 Long=-58.3772   Time=46.5049743652 ms\\
+14 208.178.244.125  BROOMFIELD, COLORADO, UNITED STATES   Lat=39.8828 Long=-105.106   Time=56.2880039215 ms\\
+ENLACE TRANSATLANTICO\\
+15 67.17.105.238  BROOMFIELD, COLORADO, UNITED STATES   Lat=39.8828 Long=-105.106   Time=161.536931992 ms\\
 
+Claramente no puede haber tanta diferencia entre dos hops tan cerca uno de otro por lo que se nos ocurre que puede ser que haya un host en Argentina con una IP de Estados Unidos y que esté conectado con el siguiente hop mediante un túnel. Lo mismo vimos en las rutas hacia Stanford y Moscú.\\
+
+Otra cosa que nos pareció importante destacar es que en las rutas hacia Cambridge y Moscú siempre apareció un hop que no respondía los mensajes de ping y éste se encontraba antes de un túnel que conectaba Estados Unidos con Europa, ésto es más que una suposición ya que en la ruta obtenida con el traceroute del sistema operativo se ven las etiquetas MPLS:\\
+15 po4-40G.ar5.NYC1.gblx.net (67.17.105.238)  182 ms  170 ms po3-40G.ar5.NYC1.gblx.net (67.17.110.254)  206 ms\\
+16  * * *\\
+17  vlan80.csw3.NewYork1.Level3.net (4.69.155.190) [MPLS: Label 1948 Exp 0]  307 ms\\ vlan70.csw2.NewYork1.Level3.net (4.69.155.126) [MPLS: Label 1947 Exp 0]  270 ms vlan90.csw4.NewYork1.Level3.net (4.69.155.254) [MPLS: Label 1558 Exp 0]  293 ms\\
+18  ae-61-61.ebr1.NewYork1.Level3.net (4.69.134.65) [MPLS: Label 1967 Exp 0]  286 ms ae-81-81.ebr1.NewYork1.Level3.net (4.69.134.73)  311 ms *\\
+19  ae-41-41.ebr2.London1.Level3.net (4.69.137.65) [MPLS: Label 1638 Exp 0]  352 ms ae-43-43.ebr2.London1.Level3.net (4.69.137.73)  311 ms  558 ms\\
+20  vlan101.ebr1.London1.Level3.net (4.69.143.85) [MPLS: Label 1496 Exp 0]  412 ms vlan102.ebr1.London1.Level3.net (4.69.143.89)  336 ms vlan103.ebr1.London1.Level3.net (4.69.143.93)  273 ms\\
+
+
+\subsection{Conclusiones de los experimentos}
+Dados los resultados podemos decir que la heurística propuesta tiene mucho sentido a nivel teórico pero en la práctica no es muy útil para descubrir enlaces transatlánticos.\\
+Se nos ocurre que tal vez sería posible buscar los enlaces existentes y tratar de encontrar rutas que pasen por ellos, aún así sería dificil lograr localizar las IPs de los routers de ambas puntas de los enlaces ya que existen túneles que hacen casi imposible saber si se esta usando un enlace u otro.\\
