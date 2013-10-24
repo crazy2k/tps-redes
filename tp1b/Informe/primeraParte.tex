@@ -72,6 +72,14 @@ ningún patrón en particular.
     \label{fig:msu:count}
 \end{figure}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=400pt]{cambridge-diff-7PM-11AM.png}
+    \caption{Diferencias entre RTTs para los enlaces de la ruta a Cambridge
+    University}
+    \label{fig:cambridge:diff}
+\end{figure}
+
 Las figuras \ref{fig:cambridge:count}, \ref{fig:stanford:count} y
 \ref{fig:msu:count} muestran las mediciones para la Cambridge University
 (Inglaterra), Stanford University (Estados Unidos) y la Moscow State
@@ -80,6 +88,10 @@ University (Rusia) respectivamente.
 En cada uno de estos gráficos puede verse una curva interpolada que muestra,
 para distintos horarios del día, los \emph{round-trip times} consignados en
 milisegundos, medidos según los métodos antes descriptos.
+
+La figura \ref{fig:cambridge:diff} muestra la diferencia entre los horarios de
+las 7PM y las 11AM de los RTTs para los enlaces de la ruta hasta el servidor
+de la Cambridge University.
 
 \subsection{Análisis de los resultados}
 De los gráficos resultantes de los experimentos, pueden observarse varias
@@ -109,7 +121,26 @@ Esto no se da de la misma forma en la ruta hacia Estados Unidos, ya que, al
 ser en la costa oeste 4 hs menos que en Buenos Aires, a esa hora todavía se
 registra un tráfico alto.
 
-Por último, vimos que los resultados de las dos herramientas son bastante
+Además, vimos que los resultados de las dos herramientas son bastante
 similares. Probablemente el hecho de que la implementación de
 \emph{traceroute} del sistema operativo haga 3 intentos por hop sea la razón
 por la cual su curva es más suave.
+
+En cuanto a los tiempos de encolado, si bien, como ya se dijo, pudimos
+observar diferencias en los RTTs a los servidores de las universidades para
+diferentes momentos del día, lo cual atribuimos a los cambios en el tráfico en
+cada lugar, nos fue imposible realizar análisis más detallados en cuanto a los
+enlaces particulares de cada ruta. Se daban muchos
+casos en los cuales la variabilidad de los valores era tan grande que no nos
+permitía sacar ninguna conclusión.
+
+Definimos el RTT de un enlace entre los hosts $h_i$ y $h_{i+1}$ como el RTT de
+$h_{i+1}$ al origen menos el RTT de $h_i$ al origen, y luego observamos el RTT
+de los enlaces para distintos horarios del día. Por ejemplo, el gráfico
+\ref{fig:cambridge:diff} muestra las diferencias entre RTTs para los enlaces
+en la ruta al servidor de la Cambridge University entre el horario de las 7PM
+y las 11AM. En este gráfico puede verse cómo los enlaces 15, 16 y 17, todos
+entre nodos ubicados en Estados Unidos, muestran una diferencia muy grande.
+Estas diferencias no nos permitieron arribar a conclusiones relacionadas con
+el tráfico en esos horarios determinados, en las diferentes zonas geográficas,
+y su influencia en los tiempos de encolamiento en los nodos.
