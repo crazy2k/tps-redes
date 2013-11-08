@@ -96,6 +96,14 @@ class PTCClientProtocol(object):
             raise Exception('cannot send data: connection not established')
         self.worker.send(data)
 
+    def send_file(self, nombre):
+        if not self.is_connected():
+            raise Exception('cannot send data: connection not established')
+        archivo = open(nombre)
+        line = archivo.readline() 
+        self.worker.send(line)
+        archivo.close()
+
     def connect_to(self, address, port):
         self.worker = ClientProtocolWorker.spawn_for(self)
         self.worker.start()
