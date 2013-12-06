@@ -1,0 +1,29 @@
+\newpage
+\section{Discusión}
+\subsection{Análisis del tiempo de transmisión}
+\indent En el gráfico podemos observar como el tiempo de transmisión usando
+ventanas de 1, 10 y 15, es muy similar. En cambio, cuando usamos una ventana de
+20, se nota la abismal diferencia en el tiempo que tarda en enviarse el
+archivo. Esto se debe claramente a la cantidad de timeouts que produce utilizar este tamaño de ventana.\\
+\indent Para poder mostrar con mas énfasis esta gran diferencia que existe en el
+tiempo de transmisión cuando crece la ventana, tratamos de probar con tamaños de
+ventana mas grandes, pero no obtuvimos resultados, dado que el protocolo no
+soportaba esa cantidad de datos en vuelo y nunca llegaba a destino el archivo.\\
+
+\subsection{Velocidad de Transferencia}
+\indent Al igual que en el gráfico anterior, podemos observar la gran diferencia
+que existe en la velocidad de transmisión cuando la ventana de emisión crece.\\
+\indent La velocidad se mantiene estable con ventanas de 1,
+10 y 15, pero cuando usamos una ventana de 20, la velocidad
+tiende a caer mucho a medida de que aumenta el tamaño del archivo.\\
+\indent Si comparamos este grafico con el anterior, se ve claramente como al
+ser menor el throughput, el tiempo de transmisión es mucho mayor.\\
+
+\subsection{Cantidad de TimeOut}
+\indent Al igual que en las 2 secciones anteriores, podemos observar la gran
+diferencia que hay entre las ventanas, en este caso, con respecto a los
+timeout.\\
+\indent Vemos que con ventanas de 1, 10 y 15, no tuvimos timeout en ninguno de
+los archivos que mandamos. En cambio, vemos que con la ventana en 20, los
+archivos mas chicos tampoco tuvieron timeout, cuando los archivos mas grandes
+empiezan a presentar cada vez mas timeouts.

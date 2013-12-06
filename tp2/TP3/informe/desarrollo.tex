@@ -1,0 +1,35 @@
+\newpage
+\section{Desarrollo}
+
+\indent Para este TP, a diferencia de los anteriores, tuvimos que completar la implementación dada del protocolo PTC. Las tareas consistieron en:
+\begin{itemize}
+ \item Completar el método $handle\_incoming$ de la clase $PTCCLientProtocol$, que maneja los paquetes recibidos.
+ \item Completar el método $handle\_timeout$ de la clase $PTCCLientProtocol$, que se llama al agotarse el tiempo de espera del primer paquete en la cola de retransmisión.
+ \item Completar la clase $ClientControlBlock$, que maneja la ventana deslizante del protocolo.
+\end{itemize}
+
+\subsection{$PTCClientProtocol::handle\_incoming$}
+
+\indent Este método es prácticamente una traducción de la especificación del protocolo a python. Lo que hace es:
+\begin{itemize}
+ \item Verificar que el flag de ACK este seteado.
+ \item Ver si el nro de ACK es aceptado (ver $ClientControlBlock$ en 4.3).
+ \item Llamar al método de la $retransmission\_queue$ que saca los paquetes reconocidos por el ACK.
+ \item Ajustar la ventana deslizante (ver $ClientControlBlock$ en 4.3).
+ \item En el caso que se esté en los estados $SYN\_SENT$ o $FIN\_SENT$ setear los nuevos estados como corresponda y establecer o cerrar la conexión según el caso.
+\end{itemize}
+
+\subsection{$PTCClientProtocol::handle\_timeout$}
+
+\indent Este método se encarga de retransmitir los paquetes que están en la $retransmission\_queue$. Se itera la cola verificando que no se haya excedido la cantidad máxima de intentos de retransmisión, si esto pasa se cierra la conexión, sino se retransmite el paquete y se actualiza la cantidad de retransmisiones. Los paquetes se vuelven a encolar para poder ser retransmitidos nuevamente.\\
+
+\subsection{$ClientControlBlock$}
+
+\indent En esta clase se completó el método $send\_allowed$ que checkea que la ventana de emisión no esté saturada, comparando el número de secuencia del mensaje a enviar con la variable $window\_hi$ de la clase que mantiene el máximo número de secuencia que se puede enviar.\\
+\indent A su vez se agregaron métodos para incrementar el número de secuencia para el próximo paquete, otro para verificar que el ACK que llega es válido y por último uno para ajustar la ventana de emisión que setea los valores correspondientes en las variables $window\_lo$ y $window\_hi$.\\
+
+\subsection{Otros}
+\indent Tuvimos que comentar la linea 83 de client.py ya que sino sólo se incrementaba el número de secuencia si el payload del mensaje no era vacío, esto hacía que no se incremente el número de secuencia después del primer mensaje (SYN) y quedaba desfasada la ventana de emisión. Consultamos con Lucio y nos dijo que estaba bien hecha nuestra corrección. \\
+Además implementamos una función $sendFile$ la cual recibe un archivo y lo manda. Esta función fue implementada para poder testear el protocolo implementado con archivos ``grandes''.
+
+

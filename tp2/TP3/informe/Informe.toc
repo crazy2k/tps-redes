@@ -1,0 +1,21 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Abstract}{3}
+\contentsline {section}{\numberline {2}Palabras Clave}{3}
+\contentsline {section}{\numberline {3}Introducci\IeC {\'o}n Te\IeC {\'o}rica}{4}
+\contentsline {subsection}{\numberline {3.1}PTC}{4}
+\contentsline {subsection}{\numberline {3.2}Capa de transporte}{4}
+\contentsline {section}{\numberline {4}Desarrollo}{5}
+\contentsline {subsection}{\numberline {4.1}$PTCClientProtocol::handle\_incoming$}{5}
+\contentsline {subsection}{\numberline {4.2}$PTCClientProtocol::handle\_timeout$}{5}
+\contentsline {subsection}{\numberline {4.3}$ClientControlBlock$}{5}
+\contentsline {subsection}{\numberline {4.4}Otros}{6}
+\contentsline {section}{\numberline {5}Resultados}{7}
+\contentsline {subsection}{\numberline {5.1}An\IeC {\'a}lisis del tiempo de transmisi\IeC {\'o}n}{7}
+\contentsline {subsection}{\numberline {5.2}Velocidad de Transferencia}{8}
+\contentsline {subsection}{\numberline {5.3}Cantidad de TimeOut}{9}
+\contentsline {section}{\numberline {6}Discusi\IeC {\'o}n}{10}
+\contentsline {subsection}{\numberline {6.1}An\IeC {\'a}lisis del tiempo de transmisi\IeC {\'o}n}{10}
+\contentsline {subsection}{\numberline {6.2}Velocidad de Transferencia}{10}
+\contentsline {subsection}{\numberline {6.3}Cantidad de TimeOut}{10}
+\contentsline {section}{\numberline {7}Conclusiones}{11}
+\contentsline {section}{\numberline {8}Bibliografia}{12}

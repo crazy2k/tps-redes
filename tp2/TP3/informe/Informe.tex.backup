@@ -1,0 +1,111 @@
+\documentclass[a4paper,spanish,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{vmargin}
+%\usepackage{algorithmic}
+%\usepackage{float}
+\usepackage{lastpage}
+\usepackage{caratula}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{url}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ECO Para jugar con el footer. 		%
+\usepackage{fancyhdr}					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%\usepackage{hyphenat}
+%%\exhyphenpenalty=10000
+%%\hyphenpenalty=10000
+\setmarginsrb{10mm}% left margin
+{15mm}% top margin
+{15mm}% right margin
+{10mm}% bottom margin
+{0mm}{20mm}{0mm}{30mm}% we needed -- related to headers and footers
+
+%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[RO, CE]{Teor\'{i}a de las Comunicaciones}
+%\fancyhead[LO, CE]{Grupo X}
+\fancyfoot[C]{ Página \thepage\ de \pageref{LastPage} }
+
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+
+\newcommand{\ite}[3]{\textbf{if} #1 \textbf{then} \\ \hspace*{7mm}\vbox{#2} \\ \textbf{else} \\ \hspace*{7mm}\vbox{#3} \\ \textbf{fi} }
+\newcommand{\itf}[3]{\textbf{if} #1 \textbf{then} \\ \hspace*{7mm}\vbox{#2} \\ \textbf{fi} \\ }
+\newcommand{\whi}[2]{\textbf{while (} #1 \textbf{)} \\ \hspace*{7mm}\vbox{\noindent #2} }
+\newcommand{\tades}[2]{\noindent\textbf{TAD} #1 \textbf{ES} #2 \\}
+\newcommand{\punt}[1]{($\ast$#1)}
+\newcommand{\fle}{$\rightarrow$}
+
+
+%%%%%%%%%%
+
+\begin{document}
+
+
+%*************************************************************%
+%                                                             %
+% CARATULA                                                    %
+%                                                             %
+%*************************************************************%
+    \materia{Teor\'{i}a de las Comunicaciones}
+
+    \titulo{Trabajo Práctico 2}
+  
+    %\subtitulo{Tres problemas de programación}
+
+    %\grupo{Grupo 255}
+
+    \integrante{Alvarez Colombo, Santiago Javier}{719/10}{santialvarezcolombo@gmail.com}
+    \integrante{Calderini, Nicol\'{a}s}{820/10}{calderini.nicolas@gmail.com}
+    \integrante{Ferrari, Gast\'{o}n}{775/07}{gastonferrari5@hotmail.com}
+    \maketitle
+    
+    \lhead{Trabajo Práctico 3}
+    
+%*************************************************************%
+%                                                             %
+% INFORME                                                     %
+%                                                             %
+%*************************************************************%
+
+	\tableofcontents
+	\newpaged
+
+\section{Abstract}
+\indent En este trabajo práctico ejercitaremos las nociones del nivel de transporte estudiadas en la materia a través de la implementación y análisis de un protocolo sencillo llamado PTC. Para hacerlo, implementaremos un cliente .\\
+\indent También analizaremos lo compleja que es la red y las caracteristicas de la misma.
+
+\section{Palabras Clave}
+Ping, traceroute, red, enlaces transatlánticos.
+
+
+
+
+
+
+\newpage
+
+\input{intro.tex}
+
+\input{desarrollo.tex}
+
+\input{resultados}
+
+\input{discusion.tex}
+
+\input{conclusiones.tex}
+
+\input{bibliografia.tex}
+
+
+ 
+\end{document}
