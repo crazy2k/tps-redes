@@ -1,0 +1,11 @@
+\newpage
+\section{Bibliografia}
+En esta ultima seccion, presentaremos las herramientas utilizadas en el Trabajo Practico.
+
+\begin{itemize}
+ \subsection{Herramientas de geolocalizacion de IPs}
+ \item geoiptool.com
+ \item geoip.flagfox.net
+ \item ipinfodb.com
+\end{itemize}
+

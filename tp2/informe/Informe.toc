@@ -1,0 +1,15 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}
+\contentsline {subsection}{\numberline {1.1}PTC}{3}
+\contentsline {subsection}{\numberline {1.2}Capa de transporte}{3}
+\contentsline {section}{\numberline {2}Desarrollo}{4}
+\contentsline {subsection}{\numberline {2.1}$PTCClientProtocol::handle\_incoming$}{4}
+\contentsline {subsection}{\numberline {2.2}$PTCClientProtocol::handle\_timeout$}{4}
+\contentsline {subsection}{\numberline {2.3}$ClientControlBlock$}{4}
+\contentsline {subsection}{\numberline {2.4}Otros}{5}
+\contentsline {section}{\numberline {3}Resultados}{6}
+\contentsline {subsection}{\numberline {3.1}Tiempo de transmisi\IeC {\'o}n}{6}
+\contentsline {subsection}{\numberline {3.2}Velocidad de Transferencia}{7}
+\contentsline {subsection}{\numberline {3.3}Cantidad de Timeouts}{8}
+\contentsline {section}{\numberline {4}Conclusiones}{9}
+\contentsline {section}{\numberline {5}Bibliografia}{10}
