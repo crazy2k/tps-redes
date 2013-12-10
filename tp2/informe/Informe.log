@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.22)  7 DEC 2013 20:01
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.1.22)  10 DEC 2013 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,6 +562,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
  []
 
 
+Overfull \hbox (11.78087pt too wide) in paragraph at lines 68--75
+\OT1/cmr/m/n/12 que-tes en-co-la-dos en la co-la de re-trans-misi^^Son del emis
+or se les aca-ba el $\OML/cmm/m/it/12 RETRANSMISSION[]TIMEOUT$
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 68--75
 
  []
@@ -592,11 +598,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [10] (./Informe.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) ) 
 Here is how much of TeX's memory you used:
  2890 strings out of 495059
  37196 string characters out of 3182030
@@ -604,12 +606,12 @@ Here is how much of TeX's memory you used:
  6007 multiletter control sequences out of 15000+200000
  9284 words of font info for 33 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,11n,43p,574b,255s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Informe.pdf (10 pages, 137732 bytes).
+ 37i,11n,43p,621b,255s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Informe.pdf (10 pages, 138779 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream

@@ -71,7 +71,7 @@ timeout.\\
 \indent Vemos que con ventanas de 1, 10 y 15, no tuvimos timeout en ninguno de
 los archivos que mandamos. En cambio, vemos que con la ventana en 20, los
 archivos mas chicos tampoco tuvieron timeout, cuando los archivos mas grandes
-empiezan a presentar cada vez mas timeouts. Los timeouts se dan ya que los paquetes encolados en el buffer del emisor se les acaba el ttl dado que los acks que se reciben del receptor no llegan lo suficientemente rápido para evitar que se acabe dicho tiempo para el paquete. Si seguimos aumentando el send window a tamaños mayores a 20 solo empeoraríamos la perfomance ya que al producirse un timeout se aplica una política de retransmisión de GoBackN lo que implica que una mayor cantidad de paquetes se deben retransmitir.\\
+empiezan a presentar cada vez mas timeouts. Los timeouts se dan ya que los paquetes encolados en la cola de retransmisión del emisor se les acaba el $RETRANSMISSION\_TIMEOUT$ dado que los acks que se reciben del receptor no llegan lo suficientemente rápido para evitar que se acabe dicho tiempo para el paquete. Si seguimos aumentando el send window a tamaños mayores a 20 solo empeoraríamos la perfomance ya que al producirse un timeout se aplica una política de retransmisión de GoBackN lo que implica que una mayor cantidad de paquetes se deben retransmitir.\\
 
 %\subsection{Tiempo de transmisión}
 %\indent En el gráfico podemos observar como el tiempo de transmisión usando
